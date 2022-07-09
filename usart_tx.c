@@ -1,7 +1,10 @@
+#include <stddef.h>
+
 #include <drv/stm32_flash.h>
 #include <drv/stm32_gpio.h>
 #include <drv/stm32_rcc.h>
 #include <drv/stm32_usart.h>
+#include <drv/usart_tx.h>
 
 #ifndef CPU_CLK_VALUE
 #error "Please define CPU_CLK_VALUE"
@@ -56,7 +59,6 @@ void main(void)
 
     for(;;)
     {
-        while(!USART_TX_READY(USART1_BASE)) {}
-        USART_TX(USART1_BASE, '#');
+        usart_send_str(USART1_BASE, "Hello world!\n");
     }
 }
