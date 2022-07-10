@@ -50,7 +50,7 @@ void main(void)
     /* PoR: alternate functions are not active on I/O ports
      * enable USART TX/RX  */
     GPIO_CFG(GPIOA_BASE, 9, CFN_OUT_ALT_PUSH_PULL, MODE_50MHz);
-    GPIO_CFG(GPIOA_BASE, 10, CFN_OUT_ALT_PUSH_PULL, MODE_50MHz);
+    GPIO_CFG(GPIOA_BASE, 10, CFN_IN_PULL_UP_DOWN, MODE_INPUT);
 
     /* USART1 uses APB2 clk as source */
     USART_ENABLE(USART1_BASE);
