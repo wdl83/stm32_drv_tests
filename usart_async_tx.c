@@ -26,13 +26,13 @@ void isrUSART1(void)
     usart_tx_isr(USART1_BASE, &usart_tx_ctrl_);
 }
 
-void tx_complete(uintptr_t base, uintptr_t user_data)
+void tx_complete(uintptr_t base, usart_tx_ctrl_t *ctrl)
 {
-    usart_tx_ctrl_.begin = (uint8_t *)buf;
-    usart_tx_ctrl_.end = (const uint8_t *)(buf + sizeof(buf));
-    usart_tx_ctrl_.complete_cb = tx_complete;
+    ctrl->begin = (uint8_t *)buf;
+    ctrl->end = (const uint8_t *)(buf + sizeof(buf));
+    ctrl->complete_cb = tx_complete;
 
-    usart_async_send(base, &usart_tx_ctrl_);
+    usart_async_send(base, ctrl);
 }
 
 __attribute__((noreturn))
@@ -84,7 +84,7 @@ void main(void)
     USART_TX_ENABLE(USART1_BASE);
     ISR_ENABLE(isrNoUSART1);
 
-    tx_complete(USART1_BASE, 0);
+    tx_complete(USART1_BASE, &usart_tx_ctrl_);
 
     for(;;){}
 }
