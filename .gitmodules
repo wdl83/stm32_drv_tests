@@ -1,3 +1,6 @@
 [submodule "stm32_drv"]
 	path = stm32_drv
 	url = https://github.com/wdl83/stm32_drv
+[submodule "modbus_c"]
+	path = modbus_c
+	url = https://github.com/wdl83/modbus_c
