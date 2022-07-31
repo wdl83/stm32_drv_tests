@@ -7,13 +7,6 @@
 #include <drv/usart_rx.h>
 #include <drv/usart_tx.h>
 
-#ifndef CPU_CLK_VALUE
-#error "Please define CPU_CLK_VALUE"
-#endif
-
-#define CPU_CLK                                          UINT32_C(CPU_CLK_VALUE)
-#define APB1_CLK                                                  (CPU_CLK >> 1)
-#define APB2_CLK                                                         CPU_CLK
 
 __attribute__((noreturn))
 void main(void)

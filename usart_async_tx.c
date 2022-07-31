@@ -7,15 +7,6 @@
 #include <drv/stm32_usart.h>
 #include <drv/usart_async_tx.h>
 
-#ifndef CPU_CLK_VALUE
-#error "Please define CPU_CLK_VALUE"
-#endif
-
-#define CPU_CLK                                          UINT32_C(CPU_CLK_VALUE)
-#define APB1_CLK                                                  (CPU_CLK >> 1)
-#define APB2_CLK                                                         CPU_CLK
-
-#define USART_NUM 3
 
 usart_tx_ctrl_t usart_tx_ctrl_;
 

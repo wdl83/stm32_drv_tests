@@ -10,16 +10,6 @@
 
 #include "libc.h"
 
-#ifndef CPU_CLK_VALUE
-#error "Please define CPU_CLK_VALUE"
-#endif
-
-#define CPU_CLK                                          UINT32_C(CPU_CLK_VALUE)
-#define APB1_CLK                                                  (CPU_CLK >> 1)
-#define APB2_CLK                                                         CPU_CLK
-
-#define USART_NUM 3
-
 usart_tx_ctrl_t tx_ctrl_;
 
 char buf[32] = "Hello world!\n";
