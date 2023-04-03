@@ -2,7 +2,7 @@ include stm32_drv/Makefile.defs
 
 TARGET = usart_adc
 
-LDFLAGS += -L$(OBJ_DIR) -lprintf
+LDFLAGS += -L$(DST_DIR)/lib -lprintf
 
 CSRCS += \
     $(DRV)/drv/usart_tx.c \

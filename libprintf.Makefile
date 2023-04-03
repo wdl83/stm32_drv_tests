@@ -1,3 +1,5 @@
+OBJ_DIR = obj.a
+
 include stm32_drv/Makefile.defs
 
 TARGET = libprintf.a
