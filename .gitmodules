@@ -4,3 +4,6 @@
 [submodule "modbus_c"]
 	path = modbus_c
 	url = https://github.com/wdl83/modbus_c
+[submodule "printf"]
+	path = printf
+	url = https://github.com/wdl83/printf
